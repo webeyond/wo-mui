@@ -1,0 +1,385 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-size: 14px;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color:#FB1647 !important;	
+}
+
+#nav_bg{
+	background: #FB1647;
+	color:#fff;
+}
+#nav_bg a , #nav_bg h1{
+	color:#fff;
+}
+#nav_bg button{
+	color:#FFFFFF;
+	font-size: 13px;
+	margin-right: 5px;
+}
+.mui-table-view{
+	margin-top: 0px !important;;
+}
+.mui-table-view li {
+	
+}
+.mui-table-view:before {
+   background-color: transparent; 
+}
+#shop_list ul li , #item_list ul li {
+	border-bottom: 1px solid #f0f0f0 !important;
+}
+#public_ul li label{
+	width:22%;
+	display: inline-block;
+}
+#public_ul li input{
+	display: inline-block;
+	width:76%;
+	margin-bottom: 0px;
+	border: 0px;
+}
+#public_ul li img{
+	height:50px;
+	width:50px;
+	border-radius: 3px;
+	float:right;
+}
+.button {
+	width:90%;
+	margin: 0 auto;
+	/*margin-top: 15px;*/
+	background: #FB1647;
+	color:#FFFFFF;
+	border:0px;
+	display: block;
+}
+#create_shop ul input {
+	text-align: right;
+}
+.textarea{
+	border:0px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	border-radius: 0 0 0 0;
+	min-height:100px;
+	font-size: 14px;
+	margin-bottom: 0px;;
+}
+
+/*index_ad*/
+#index_ad img{
+	width:100%;
+}
+/*item*/
+.item_div{
+	padding: 13px 12px 9px 12px;
+}
+.item_div_l{
+	float:left;
+	width:30%;
+}
+.item_div_l img{
+	width: 100%;
+}
+.item_div_r{
+	float:right;
+	width:70%;
+	padding-left: 10px;;
+}
+.item_div_r h3{
+	font-weight: normal;
+	font-size: 14px;;
+	/*color:#FB1647;*/
+}
+.item_div_r p {
+	font-size: 13px;
+	margin-bottom: 0px;
+	line-height: 18px;;
+}
+.item_div_r span{
+	color:#FB1647;
+}
+/*message*/
+#message ul li a{
+	font-size: 13px;
+	color:#333;
+}
+#message .pay{
+	color:#ff6633;
+}
+#message .send{
+	color:#FB1647;
+}
+#message_detail {
+	margin: 15px;
+	background: #FFFFFF;
+	padding: 15px;;
+	color:#555;
+	font-size: 14px;
+	border-radius: 3px;
+}
+/*shop_list*/
+#shop_list .item_div_l {
+	width: 20%;;
+}
+#shop_list .item_div_l img{
+	border-radius: 50%;
+}
+#shop_list .item_div_r{
+	width:80%;
+}
+#shop_list .item_div_r h3{
+	color:#FB1647;
+	margin-top: 10px;;
+}
+/*home*/
+.home_t{
+	text-align: center;
+	padding: 50px 0;
+}
+.home_t div {
+	width:30%;
+	margin: 0 auto;
+}
+.home_t div img{
+	width: 100%;
+	border-radius: 50%;
+	margin: 0 auto;;
+}
+.home_t h1{
+	font-size: 14px;
+	height:30px;
+	line-height:30px;
+	letter-spacing: 1px;
+}
+.home_b {
+	margin-bottom: 15px;
+	border-top: 1px solid #ddd;
+}
+.home_b , .home_b a{
+	font-size: 13px;;
+}
+/*address*/ 
+#user_address h2{
+	font-size: 15px;
+}
+#user_address h2 span{
+	font-weight: normal;
+	font-size: 13px;
+	float:right;
+	color:#666;
+	display: inline-block;
+	margin-right: 3px;
+}
+#user_address p{
+	font-size: 13px;;
+	color:#444;
+}
+/*iteam_detail*/
+#item_detail_t {
+	background: #FFFFFF;
+}
+#item_detail_t img{
+	width:100%;
+}
+#item_detail_t div{
+	padding: 5px 15px;
+}
+#item_detail_t div h1{
+	font-size: 15px;;
+	font-weight: normal;
+	height:20px;
+	line-height:20px;
+	overflow: hidden;
+}
+#item_detail_t div p{
+	line-height:19px;
+	color:#555;
+	font-size: 13px;
+}
+#item_detail_t div span{
+	color:#FB1647;
+	font-size: 16px;
+	font-weight: 700;
+	display: inline-block;
+	margin-right: 10px;
+}
+#item_detail_shop {
+	padding: 5px;
+	background: #FFFFFF;
+	margin: 15px 0;
+}
+#item_detail_content {
+	padding: 5px 15px;
+	background: #FFFFFF;
+	margin-bottom: 15px;;
+}
+#item_detail_content h4{
+	font-size: 14px;
+	font-weight: normal;
+	color:#555;
+	padding: 3px 0 10px 0;
+	border-bottom: 1px solid #e2e2e2;
+}
+#item_detail_content div img{
+	width: 100%;
+}
+#item_detail_content span {
+	font-size: 11px;
+	color:#666;
+	float:right;
+}
+#item_detail_tab {
+	height:40px;
+	line-height:40px;
+	-webkit-box-shadow: 0 0 0 0;
+   box-shadow: 0 0 0 0; 
+}
+#item_detail_tab a{
+	display: inline-block;
+	width:50%;
+	text-align: center;
+	background: #FB1647;
+	color:#FFFFFF;
+	font-size: 13px;
+}
+#item_detail_tab  .car{
+	background: #FF6633;
+}
+/*car*/
+#car_div{
+	height:22px;
+	line-height:21px;
+	width:90px;
+	border:1px solid #999;
+	border-radius: 3px;
+	margin-top: 3px;
+}
+#car_div b{
+	display: inline-block;
+	width:33.3%;
+	font-weight: normal;
+	text-align: center;
+	border-right:1px solid #999;
+}
+#car_money {
+	height:50px;
+	line-height:50px;
+	background: #FFFFFF;
+	text-align: right;
+	padding-right: 15px;
+	position: relative;
+	top:-1px;
+	border-top:1px solid #e2e2e2;
+}
+#car_money  span{
+	color:#FB1647;
+	font-size: 14px;;
+}
+#car_h3{
+	font-size: 14px;
+	padding: 10px 15px;
+}
+#car_h3 span{
+	float:right;
+	font-size: 13px;
+	font-weight: normal;
+	color:#FB1647;
+}
+/*shop_detail*/
+#shop_detail_b img{
+	width: 100%;;
+}
+#shop_detail_info {
+	margin: 0px 0 10px 0;
+	background: #FFFFFF;
+}
+#shop_detail_info .address {
+	height:36px;
+	line-height:36px;
+	border-top:1px solid #e2e2e2;
+	font-size: 13px;
+	color:#666;
+	padding: 0 12px;;
+}
+#shop_detail_info .address div{
+	width: 49.3%;
+	display: inline-block;
+	text-align: center;
+	font-size: 13px;
+	color:#888;
+}
+#shop_detail_item_number {
+	float:right;
+	font-size: 11px;
+	line-height: 15px;
+	
+}
+/*shop_manage*/
+#item_manage_list_div a{
+	float: right;
+	font-size: 12px;
+	display: inline-block;
+	margin-left: 3px;;
+}
+#account_div{
+	background: #FB1647;
+}
+#account_div div{
+	display: inline-block;
+	width:49%;
+	/*background: #FF6633;*/
+	height:200px;
+	line-height: 200px;
+	color:#FFFFFF;
+	text-align: center;
+	font-size: 13px;
+}
+#account_div div span{
+	font-size: 22px;
+}
+/*login*/
+/*登录*/
+#login_public label ,#login_public input {
+	display: inline-block;
+	float:left;
+	height:30px;
+}
+#login_public label {
+	width: 25%;
+	height:30px;
+	line-height: 30px;
+}
+#login_public input {
+	width:75%;
+	margin: 0px;
+	border: 0px;;
+	font-size: 14px;
+}
+#login button{
+	display: block;;
+	width:96%;
+	margin: 15px auto;	
+}
+#login p {
+	text-align: center;
+}
+#login p a{
+	font-size: 13px;
+	color:#888;
+}
+#code{
+	position:relative;
+}
+#login_public #find_code{
+	position:absolute;
+	top:-5px;
+	right:10px;
+	width:100px;
+	font-size: 13px;
+	background:#FB1647;
+	border:1px solid #FB1647;
+	color:#FFFFFF;
+}

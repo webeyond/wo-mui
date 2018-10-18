@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link href="../../css/mui.picker.css" rel="stylesheet" />
+		<link href="../../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+		<style type="text/css">
+			.aname {
+				font-size: 16px;
+			}
+			
+			.ainf {
+				font-size: 12px;
+			}
+			
+			.iplay {
+				display: block;
+				background: no-repeat right center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABYCAYAAAADWlKCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAKwwAACsMBNCkkqwAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8xMi8xM5w+I3MAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAD9UlEQVR4nO2b3XETMRRGDwzvoYOkg5hRAVkqiKmAdIA7wHSQVECoALsC1gXciV0BTge4gvCwgnHk9d/+WF8m97ztxrlXs8fS1Urym6enJxwd3uZugPMcFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEcCFiuBAx3uVuwDGY2XtgCBTAALjc8tEFMAdKYBJC+HOK9nXBm5dwUM7MCmAEXDcMMQVuQwhlV23qC2khZjYAboGrjkLOgFEIYd5RvM6RrSFmdgs80J0MYqyHGFsSuR4S60TJ9vrwCEziZ+YhhGXy/xdU9aWgqjfnW+IsgEKtvkgJiUPUPfUyZsD42DoQ68+Y+p62AG6UhjAZITt6xopq3L9vGf+Gqh6dJX+S6ilKNaRkU8YCGLSVARBjDGLMdS5jbgkkhMQiWyejSGtEG2KsghopKoU++5AV68ZDcrvXYWTH8Pghdz1R6CHpN3MFDPsc02PsYcy1qy0nJ6uQOANKZz+jfcOUmd3H6W1jYo5RcvsqtikbuXtI+kBmBxbwz8DczMZtksdcsz1tOinZhMRxPF2bGh8R4gz4amZLMxu2aEqa8zq2LQs5e0j6EB8bLv6dAz/NrGwyjMWcj3vadjJyCimS60nLeFfAbzO7bfANT3MXLdvSmJxCBsl12VHcL8AyvpkfSpo7bdvJyCkkfQfocv5/Bnw3s/mBs6Y097aFzd7JPcv6T5dv5GtcAr/2TZN7yt0IGSE908k0+RS8FiEvhhd1yKEFUw5YAVBApoe0XQrZwgL4GEIY7pLRU+5G5OwhC57PZgbAsqPYK6rdxUMXC9Npbro8fzJy9pB0qll0FPcOuDhCRl3ubEvwOYWUyXXb5YoZ1X7GqMHSfZq7bNmWxuQUki5XnDdc+n4EPoUQiiabSzFnejKl7TJOY7IJid/iaXJ7fESIFfCNas+9zQNMc05zHnjIPctKx/mrA9egflCJGLd5eDFXukGWdddQYU+95PlDWVE97GXPeS+oivf6saBZCKHoM+8+cvcQ2NyhOwMmfW4SxdgTNs9oZd0tBAEhsRDfJbcvgbIPKTtOnNzlPnECAkPWP8xsTv3ZrJ1v2UfmuKDqGRt5QgjZ9kDWyd5D1iioP1U4P3KzqZYYY5v0om38rpDpIeCHrUFMCPjPEeSE/COetf3SU/i7EEL2GVUdSjXkGfGBfWDzIFsb/q93dRizU2R7yDr+o09R/GfRzsmRrSGvFRcihgsRw4WI4ULEcCFiuBAxXIgYLkQMFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMf4CVuqCm+17t3sAAAAASUVORK5CYII=);
+				background-size: 50px 44px;
+				-ms-touch-action: auto;
+			}
+		</style>
+		<script type="text/javascript" src="../../js/common.js"></script>
+		<script type="text/javascript">
+			var i = 1,
+				gentry = null,
+				w = null;
+			var hl = null,
+				le = null,
+				de = null,
+				ie = null;
+			var unv = true;
+			var bUpdated = false; //用于兼容可能提前注入导致DOM未解析完更新的问题
+			// H5 plus事件处理
+			function plusReady() {
+				// 获取摄像头目录对象
+				plus.io.resolveLocalFileSystemURL('_doc/', function(entry) {
+					entry.getDirectory('camera', {
+						create: true
+					}, function(dir) {
+						gentry = dir;
+						updateHistory();
+					}, function(e) {
+						outSet('Get directory "camera" failed: ' + e.message);
+					});
+				}, function(e) {
+					outSet('Resolve "_doc/" failed: ' + e.message);
+				});
+			}
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener('plusready', plusReady, false);
+			}
+			// 监听DOMContentLoaded事件
+			document.addEventListener('DOMContentLoaded', function() {
+				// 获取DOM元素对象
+				hl = document.getElementById('history');
+				le = document.getElementById('empty');
+				de = document.getElementById('display');
+				if(ie = document.getElementById('index')) {
+					ie.onchange = indexChanged;
+				}
+				// 判断是否支持video标签
+				unv = !document.createElement('video').canPlayType;
+				updateHistory();
+			}, false);
+
+			function changeIndex() {
+				outSet('选择摄像头：');
+				ie.focus();
+			}
+
+			function indexChanged() {
+				de.innerText = ie.options[ie.selectedIndex].innerText;
+				i = parseInt(ie.value);
+				outLine(de.innerText);
+			}
+			// 拍照
+			function getImage() {
+				outSet('开始拍照：');
+				var cmr = plus.camera.getCamera();
+				cmr.captureImage(function(p) {
+					outLine('成功：' + p);
+					plus.io.resolveLocalFileSystemURL(p, function(entry) {
+						createItem(entry);
+					}, function(e) {
+						outLine('读取拍照文件错误：' + e.message);
+					});
+				}, function(e) {
+					outLine('失败：' + e.message);
+				}, {
+					filename: '_doc/camera/',
+					index: 1
+				});
+			}
+			// 录像
+			function getVideo() {
+				outSet('开始录像：');
+				var cmr = plus.camera.getCamera();
+				cmr.startVideoCapture(function(p) {
+					outLine('成功：' + p);
+					plus.io.resolveLocalFileSystemURL(p, function(entry) {
+						createItem(entry);
+					}, function(e) {
+						outLine('读取录像文件错误：' + e.message);
+					});
+				}, function(e) {
+					outLine('失败：' + e.message);
+				}, {
+					filename: '_doc/camera/',
+					index: i
+				});
+			}
+			// 显示文件
+			function displayFile(li) {
+				if(w) {
+					outLine('重复点击！');
+					return;
+				}
+				if(!li || !li.entry) {
+					ouSet('无效的媒体文件');
+					return;
+				}
+				var name = li.entry.name;
+				var suffix = name.substr(name.lastIndexOf('.'));
+				var url = '';
+				if(suffix == '.mov' || suffix == '.3gp' || suffix == '.mp4' || suffix == '.avi') {
+					//if(unv){plus.runtime.openFile('_doc/camera/'+name);return;}
+					url = 'camera_video.html';
+				} else {
+					url = 'camera_image.html';
+				}
+				w = plus.webview.create(url, url, {
+					hardwareAccelerated: true,
+					scrollIndicator: 'none',
+					scalable: true,
+					bounce: 'all'
+				});
+				w.addEventListener('loaded', function() {
+					w.evalJS('loadMedia("' + li.entry.toLocalURL() + '")');
+					//w.evalJS('loadMedia("'+'http://localhost:13131/_doc/camera/'+name+'")');
+				}, false);
+				w.addEventListener('close', function() {
+					w = null;
+				}, false);
+				w.show('pop-in');
+			}
+
+			// 添加播放项
+			function createItem(entry) {
+				var li = document.createElement('li');
+				li.className = 'ditem';
+				li.innerHTML = '<span class="iplay"><font class="aname"></font><br/><font class="ainf"></font></span>';
+				li.setAttribute('onclick', 'displayFile(this)');
+				hl.insertBefore(li, le.nextSibling);
+				li.querySelector('.aname').innerText = entry.name;
+				li.querySelector('.ainf').innerText = '...';
+				li.entry = entry;
+				updateInformation(li);
+				// 设置空项不可见
+				le.style.display = 'none';
+			}
+			// 获取录音文件信息
+			function updateInformation(li) {
+				if(!li || !li.entry) {
+					return;
+				}
+				var entry = li.entry;
+				entry.getMetadata(function(metadata) {
+					li.querySelector('.ainf').innerText = "140202198207095010";
+				}, function(e) {
+					outLine('获取文件"' + entry.name + '"信息失败：' + e.message);
+				});
+			}
+			// 获取录音历史列表
+			function updateHistory() {
+				if(bUpdated || !gentry || !document.body) { //兼容可能提前注入导致DOM未解析完更新的问题
+					return;
+				}
+				var reader = gentry.createReader();
+				reader.readEntries(function(entries) {
+					for(var i in entries) {
+						if(entries[i].isFile) {
+							createItem(entries[i]);
+						}
+					}
+				}, function(e) {
+					outLine('读取录音列表失败：' + e.message);
+				});
+				bUpdated = true;
+			}
+			// 清除历史记录
+			function cleanHistory() {
+				hl.innerHTML = '<li id="empty" class="ditem-empty">此处拍身份证照片和身份证地址</li>';
+				le = document.getElementById('empty');
+				// 删除音频文件
+				outSet('此处拍身份证照片和身份证地址');
+				gentry.removeRecursively(function() {
+					// Success
+					outLine('成功！');
+				}, function(e) {
+					outLine('失败：' + e.message);
+				});
+			}
+		</script>
+		<style type="text/css">
+			.aname {
+				font-size: 16px;
+			}
+			
+			.ainf {
+				font-size: 12px;
+			}
+			
+			.iplay {
+				display: block;
+				background: no-repeat right center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABYCAYAAAADWlKCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAKwwAACsMBNCkkqwAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8xMi8xM5w+I3MAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAD9UlEQVR4nO2b3XETMRRGDwzvoYOkg5hRAVkqiKmAdIA7wHSQVECoALsC1gXciV0BTge4gvCwgnHk9d/+WF8m97ztxrlXs8fS1Urym6enJxwd3uZugPMcFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEcCFiuBAx3uVuwDGY2XtgCBTAALjc8tEFMAdKYBJC+HOK9nXBm5dwUM7MCmAEXDcMMQVuQwhlV23qC2khZjYAboGrjkLOgFEIYd5RvM6RrSFmdgs80J0MYqyHGFsSuR4S60TJ9vrwCEziZ+YhhGXy/xdU9aWgqjfnW+IsgEKtvkgJiUPUPfUyZsD42DoQ68+Y+p62AG6UhjAZITt6xopq3L9vGf+Gqh6dJX+S6ilKNaRkU8YCGLSVARBjDGLMdS5jbgkkhMQiWyejSGtEG2KsghopKoU++5AV68ZDcrvXYWTH8Pghdz1R6CHpN3MFDPsc02PsYcy1qy0nJ6uQOANKZz+jfcOUmd3H6W1jYo5RcvsqtikbuXtI+kBmBxbwz8DczMZtksdcsz1tOinZhMRxPF2bGh8R4gz4amZLMxu2aEqa8zq2LQs5e0j6EB8bLv6dAz/NrGwyjMWcj3vadjJyCimS60nLeFfAbzO7bfANT3MXLdvSmJxCBsl12VHcL8AyvpkfSpo7bdvJyCkkfQfocv5/Bnw3s/mBs6Y097aFzd7JPcv6T5dv5GtcAr/2TZN7yt0IGSE908k0+RS8FiEvhhd1yKEFUw5YAVBApoe0XQrZwgL4GEIY7pLRU+5G5OwhC57PZgbAsqPYK6rdxUMXC9Npbro8fzJy9pB0qll0FPcOuDhCRl3ubEvwOYWUyXXb5YoZ1X7GqMHSfZq7bNmWxuQUki5XnDdc+n4EPoUQiiabSzFnejKl7TJOY7IJid/iaXJ7fESIFfCNas+9zQNMc05zHnjIPctKx/mrA9egflCJGLd5eDFXukGWdddQYU+95PlDWVE97GXPeS+oivf6saBZCKHoM+8+cvcQ2NyhOwMmfW4SxdgTNs9oZd0tBAEhsRDfJbcvgbIPKTtOnNzlPnECAkPWP8xsTv3ZrJ1v2UfmuKDqGRt5QgjZ9kDWyd5D1iioP1U4P3KzqZYYY5v0om38rpDpIeCHrUFMCPjPEeSE/COetf3SU/i7EEL2GVUdSjXkGfGBfWDzIFsb/q93dRizU2R7yDr+o09R/GfRzsmRrSGvFRcihgsRw4WI4ULEcCFiuBAxXIgYLkQMFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMf4CVuqCm+17t3sAAAAASUVORK5CYII=);
+				background-size: 50px 44px;
+				-ms-touch-action: auto;
+			}
+		</style>
+		<style type="text/css">
+			#close_page {
+				font-family: '微软雅黑';
+				color: #FFFFFF;
+			}
+			
+			.mui-bar-nav {
+				top: 0;
+				-webkit-box-shadow: 0 0px 0px #ccc;
+				box-shadow: 0 0px 0px #ccc;
+			}
+			
+			#head {
+				background: #EB413D;
+			}
+			
+			#head a {
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<ul class="mui-table-view" id="public_ul">
+					<li class="mui-table-view-cell">
+						<label for="">姓名</label>
+						<input type="text" placeholder="请填写姓名" />
+					</li>
+					<li class="mui-table-view-cell">
+						<label for="">联系电话</label>
+						<input type="text" placeholder="请填写联系电话" />
+					</li>
+					<li class="mui-table-view-cell" style="display: none;">
+						<label for="">身份证</label>
+						<input type="text" placeholder="请填写身份证" onclick="getImage()" />
+					</li>
+				</ul>
+				<div id="dcontent" class="dcontent" style="margin-bottom: -10px;">
+
+					<!-- History list -->
+					<ul id="history" class="dlist" style="text-align:left;margin-top: 10px;">
+						<li id="empty" class="ditem-empty">此处拍身份证照片和身份证地址</li>
+					</ul>
+					<div class="button button-waring" onclick="getImage()">拍照</div>
+					<div class="button button-waring" onclick="cleanHistory()">清空历史记录</div>
+					<br/>
+				</div>
+				<div id="output" style="display: none;">
+					Camera管理摄像头设备，可用于拍摄照片、录制视频文件。
+				</div>
+				<ul>
+					<li>
+						<h5 class="mui-content-padded">请选择归属：</h5>
+						<select class="mui-btn mui-btn-block">
+							<option value="item-1">上海东区</option>
+							<option value="item-2">上海闵行</option>
+							<option value="item-3">上海西区</option>
+							<option value="item-4">上海北区</option>
+						</select>
+					</li>
+					<li>
+						<h5 class="mui-content-padded" style="margin-bottom: 5px;">请选择号码：</h5>
+						<input type="text" id='showUserPicker' placeholder="请选择号码" />
+					</li>
+					<li style="margin-top: -15px;">
+						<h5 class="mui-content-padded" style="margin-bottom: 5px;">配送地址：</h5>
+						<input type="text" id='showCityPicker3' placeholder="请选择省/市/区(县)">
+						<input type="text" id='showCityPicker3' placeholder="街道/镇+村/小区/写字楼+门牌号" />
+					</li>
+				</ul>
+
+				<!--<h5 class="mui-content-padded">请选择号码：</h5>-->
+				<!--<button id='showUserPicker' class="mui-btn mui-btn-block" type='button'>一级选择示例 ...</button>-->
+				<!--<div id='userResult' class="ui-alert" style="text-align: left;"></div>-->
+
+				<!--<button id='showCityPicker' class="mui-btn mui-btn-block" type='button'>二级联动示例 ...</button>
+				<div id='cityResult' class="ui-alert"></div>-->
+				<!--<button id='showCityPicker3' class="mui-btn mui-btn-block" type='button'>三级联动示例 ...</button>-->
+				<!--<div id='cityResult3' class="ui-alert"></div>-->
+				<button class="button" id="btn" type='button' style="font-size:18px;line-height: 1.8;">立即提交,免费送货上门</button>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.picker.js"></script>
+		<script src="../../js/mui.poppicker.js"></script>
+		<script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						text: '18603523521'
+					}, {
+						value: '18601700520',
+						text: '18601700520'
+					}, {
+						value: '18601710520',
+						text: '18601710520'
+					}, {
+						value: '18601720520',
+						text: '18601720520'
+					}, {
+						value: '18601730520',
+						text: '18601730520'
+					}, {
+						value: '18601740520',
+						text: '18601740520'
+					}, {
+						value: '18601770520',
+						text: '18601770520'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('showUserPicker');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					var cityResult3 = doc.getElementById('showCityPicker3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.value = _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				document.getElementById("btn").addEventListener("tap", function() {
+					mui.openWindow({
+						url: "beecloud.html",
+						id: "beecloud",
+						styles: {
+							top: '20px',
+							scalable: true
+						}
+					});
+				});
+			});
+		</script>
+
+	</body>
+	<script type="text/javascript" src="../../js/immersed.js"></script>
+
+</html>

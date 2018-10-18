@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="https://res.mall.10010.cn/mall/mobile/css/global.css?resVer=20181012012746" />
+		<link rel="stylesheet" type="text/css" href="https://res.mall.10010.cn/mall/mobile/css/select_num.css?resVer=20181012012746" />
+	</head>
+
+	<body>
+		<div id="select-page" class="page" data-role="page">
+			<div class="header">
+				<h1 class="p-title">优惠套餐</h1>
+			</div>
+			<div class="content">
+				<div class="search-area" id="s-wrapper">
+					<a id="cancel" class="cancel" href="javascript:void(0);">取消</a>
+					<div class="search-wrap">
+						<input id="s-input" type="text" class="search-input">
+						<input type="submit" value="" class="search-btn" id="submit">
+						<a class="clear-text" href="javascript:void(0);" style=""><span></span></a>
+					</div>
+				</div>
+				<!-- 商品列表 -->
+				<script>
+					var pageData = {};
+				</script>
+				<div class="select-area">
+					<a href="javascript:void(0);" class="filter-btn fr">筛选<i></i></a>
+					<a href="javascript:void(0);" class="sort-btn-s sort-btn-s-selected">销量<i></i></a>
+					<a href="javascript:void(0);" class="sort-btn">套餐资费<i></i></a>
+				</div>
+				<div id='goodsListPageDiv'>
+					<div class="pkg-list" id="txGoodsList">
+						<a>
+							<span class="pkg-img"><img src="https://res.mall.10010.cn/mall/mobile/images/tencent.png"/></span>
+							<span class="pkg-info">
+                <p class="pkg-title">【腾讯王卡】超百款APP免流量<strong class="cf00">首充50送50<br>每月加送1G通用流量</strong></p>
+                <span class="s-text"></span>
+							<p class="s-info">
+								<span class="pkg-price">
+                        <span class="n-price">￥0</span>
+								</span>
+								<span class="sale-icons">
+                        <i style="display:none">折</i>
+                        <i style="display:none">赠</i>
+                        <i style="display:none">团</i>
+                    </span>
+							</p>
+							</span>
+						</a>
+					</div>
+					<div class="pkg-list" id="iceGoodsList">
+						<a>
+							<span class="pkg-img"><img src="https://res.mall.10010.cn/mall/mobile/images/ice-goods.png"/></span>
+							<span class="pkg-info">
+                <p class="pkg-title">【热卖】冰神卡--全国流量放心用<strong class="cf00"></strong></p>
+                <span class="s-text"></span>
+							<p class="s-info">
+								<span class="pkg-price">
+                        <span class="n-price">￥49</span>
+								</span>
+								<span class="sale-icons">
+                        <i style="display:none">折</i>
+                        <i style="display:none">赠</i>
+                        <i style="display:none">团</i>
+                    </span>
+							</p>
+							</span>
+						</a>
+					</div>
+					<div class="pkg-list" id="goodsList">
+						<a href="javascript:void(0);" goodsUrl="javascript:void(0);">
+							<span class="pkg-img"><img src="https://res.mall.10010.cn/mall/res/uploader/temp/201807021659591348932608_170_170.jpg"/></span>
+							<span class="pkg-info">
+                <p class="pkg-title">【全新上市】2018版魔都卡 免费领卡 入网即赠50元话费 SPK49000000121928918<strong class="cf00">国内流量1元1GB 当日有效 自动续订 不用不花钱</strong></p>
+                <span class="s-text"></span>
+							<p class="s-info">
+								<span class="pkg-price">
+                            <span class="i-price">￥<del>50</del></span>
+								<span class="n-price">￥0</span>
+								</span>
+								<span class="sale-icons">
+                        <i style="">折</i>
+                        <i style="display:none">赠</i>
+                        <i style="display:none">团</i>
+                    </span>
+							</p>
+							</span>
+						</a>
+					</div>
+
+					<input type="hidden" id="currentPage" value="1">
+					<input type="hidden" id="totalPages" value="1">
+					<input type="hidden" id="totalSize" value="1">
+					<div class="page-cut">
+						<span class="page-turn-btn page-turn-btn-d">上一页</span>
+						<p class="select-w pages">
+							<select class="select-style" id="goToPage" onchange="location = this.options[this.selectedIndex].value;">
+								<option value="https://m.10010.com/sh/feesetlist-0-0-0-0-0-0-0-0-1-0-0/" selected="selected">1</option>
+							</select>
+						</p>
+						<span class="page-turn-btn page-turn-btn-d">下一页</span>
+					</div>
+				</div>
+				<span id='flag'></span>
+				<div class="mask"></div>
+				<div style="display: none;" class="loading p-load"></div>
+			</div>
+		</div>
+		<script src="../../js/common/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				document.getElementById("txGoodsList").addEventListener("tap", function() {
+					mui.openWindow({
+						url: "setmealTarget.html",
+						id: "target",
+						styles: {
+							top: '20px',
+							scalable: true
+						}
+					});
+				});
+				document.getElementById("iceGoodsList").addEventListener("tap", function() {
+					mui.openWindow({
+						url: "setmealTarget.html",
+						id: "target",
+						styles: {
+							top: '20px',
+							scalable: true
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/common/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/common/homestyle.css" />
+		<script language="javascript" type="text/javascript">
+			if (!this.Esf) {
+				this.Esf = {};
+				Esf.contextPath = "https://m.10010.com/";
+				Esf.MallWebResPath = "http://res.mall.10010.cn/mall";
+				Esf.MallMobileResPath = "https://res.mall.10010.cn/mall";
+				Esf.MobilePhotoPath = "https://res.mall.10010.cn/mall/res";
+				Esf.provinceCode = "31";
+				Esf.DecoraterOp = "RELEASE";
+				Esf.pageId = "10.31";
+				Esf.pushTag = "0";
+				Esf.MobileMallIndex = "https://m.10010.com";
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="mui-content" id="news">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop" v-cloak>
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;" :data-guid="banner2.guid" @tap="open_detail(banner2)">
+							<img :src="banner2.cover" class="imglunbo">
+						</a>
+						<div style="display: none;">
+							<h2 class="title mui-ellipsis-2">{{banner2.title}}</h2>
+							<div class="author">{{banner2.author}}</div>
+							<div class="time">{{banner2.time}}</div>
+						</div>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:;" :data-guid="banner.guid" @tap="open_detail(banner)">
+							<img :src="banner.cover" class="imglunbo">
+						</a>
+						<div style="display: none;">
+							<h2 class="title mui-ellipsis-2">{{banner.title}}</h2>
+							<div class="author">{{banner.author}}</div>
+							<div class="time">{{banner.time}}</div>
+						</div>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:;" :data-guid="banner1.guid" @tap="open_detail(banner1)">
+							<img :src="banner1.cover" class="imglunbo">
+						</a>
+						<div style="display: none;">
+							<h2 class="title mui-ellipsis-2">{{banner1.title}}</h2>
+							<div class="author">{{banner1.author}}</div>
+							<div class="time">{{banner1.time}}</div>
+						</div>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:;" :data-guid="banner2.guid" @tap="open_detail(banner2)">
+							<img :src="banner2.cover" class="imglunbo">
+						</a>
+						<div style="display: none;">
+							<h2 class="title mui-ellipsis-2">{{banner2.title}}</h2>
+							<div class="author">{{banner2.author}}</div>
+							<div class="time">{{banner2.time}}</div>
+						</div>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;" :data-guid="banner.guid" @tap="open_detail(banner)">
+							<img :src="banner.cover" class="imglunbo">
+						</a>
+						<div style="display: none;">
+							<h2 class="title mui-ellipsis-2">{{banner.title}}</h2>
+							<div class="author">{{banner.author}}</div>
+							<div class="time">{{banner.time}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="mui-slider-indicator mui-text-center" style="display: none;">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div class="list_title_box">
+				<div class="wrap">
+					<span>
+						<img style="float: left;width: 20%;margin-top: 3px;" src="https://res.mall.10010.cn/mall/ves/images/mobileIndex/title-icon.png?resVer=20181011213750" alt="沃头条">
+					</span>
+					<div class="roll-wrap" id="roll-wrap">
+						<ul>
+							<li>
+								<a href="/mall-mobile/Notice/list?provinceCode=31">
+									<p>沃头条详情进入... </p>
+								</a>
+							</li>
+							<li>
+								<a href="/mall-mobile/Notice/list?provinceCode=31">
+									<p>沃超越上线了</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div date-type='1' class="">
+				<div class='hot_package_box hot_box_box' date-type='2' date-block-type='10_5_1_pkg' date-unit-type='10_5_Unit' date-layout-edit='true' date-module-edit='true'>
+					<div class="mmodule" date-module-def='10_hot_pkg_title' date-type='3' id="278147">
+						<p class="package_title"><b>热销套餐</b></p>
+					</div>
+					<div class="mmodule" date-module-def='10_hot_pkg_img' date-type='3' id="278148">
+						<a href="https://u.10010.cn/qABs3" class="package_a">
+							<img src="https://res.mall.10010.cn/mall/res/uploader/index/201807161338291874881184.jpg" alt="腾讯王卡">
+						</a>
+					</div>
+					<div id='moduleEditTips_278148' style='display:none'><span>格式限制为：JPG\PNG\GIF，图片大小限制为：616*150（像素）</span></div>
+					<div class="mmodule" date-module-def='10_hot_pkg' date-type='3' id="278149">
+						<div class="box">
+							<ul>
+								<li>
+									<a href="https://m.10010.com/scaffold-show/icecream_fare">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180917142043276926768.jpg" alt="冰神卡">
+									</a>
+								</li>
+								<li>
+									<a href="https://u.10010.cn/qABs3">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/201803291024121096900432.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://t.cn/R1zHYBS">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180413111525814381008.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311801255075.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180402145339-913612384.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id='moduleEditTips_278149' style='display:none'><span>1、商品图片最多9张，格式限制为：JPG\PNG\GIF,大小限制为：194*272（像素）</span></div>
+				</div>
+			</div>
+			<div date-type='1' class="">
+				<div class='hot_package_box hot_phone_box' date-type='2' date-block-type='10_6_1_phone' date-unit-type='10_6_Unit' date-layout-edit='true' date-module-edit='true'>
+					<div class="mmodule" date-module-def='10_hot_phone_title' date-type='3' id="278150">
+						<p class="phone_title"><b>热销手机</b></p>
+					</div>
+					<div class="mmodule" date-module-def='10_hot_phone_img' date-type='3' id="278151">
+						<a href="https://m.10010.com/mobilegoodsdetail/311710310946.html" class="phone_a">
+							<img src="https://res.mall.10010.cn/mall/res/uploader/index/201711151514501035128672.jpg" alt="">
+						</a>
+					</div>
+					<div id='moduleEditTips_278151' style='display:none'><span>格式限制为：JPG\PNG\GIF，图片大小限制为：616*150（像素）</span></div>
+					<div class="mmodule" date-module-def='10_hot_phone' date-type='3' id="278152">
+						<div class="box">
+							<ul>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311709208819.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180814142812944109040.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311611011808.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180930172112-1901713744.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="http://m.10010.com/mobilegoodsdetail/311809034903.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/201809031726581441149152.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="http://m.10010.com/mobilegoodsdetail/311809296015.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180930171747-1704066672.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id='moduleEditTips_278152' style='display:none'><span>1、商品图片最多9张，格式限制为：JPG\PNG\GIF,大小限制为：194*272（像素）</span></div>
+				</div>
+			</div>
+			<div date-type='1' class="">
+				<div class='noclass' date-type='2' date-block-type='10_7_1_pic' date-unit-type='10_7_Unit' date-layout-edit='true' date-module-edit='true'>
+					<div class="mmodule" date-module-def='10_hot_pic' date-type='3' id="278153">
+						<div class="hot_ice_box">
+							<a href="https://m.10010.com/kuandaiyy">
+								<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180930172155156330720.jpg" alt="宽带">
+							</a>
+						</div>
+					</div>
+					<div id='moduleEditTips_278153' style='display:none'><span>格式限制为：JPG\PNG\GIF，图片大小限制为：618*212（像素）</span></div>
+				</div>
+			</div>
+			<div date-type='1' class="">
+				<div class='noclass' date-type='2' date-block-type='10_8_1_card' date-unit-type='10_8_Unit' date-layout-edit='true' date-module-edit='true'>
+					<div class="mmodule" date-module-def='10_hot_card' date-type='3' id="278154">
+						<div class="state  hot_package_box hot_card_box">
+							<p><b>热销上网卡</b><span><a href="https://m.10010.com/sh/card/">更多</a></span></p>
+							<ul>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311607203913.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/201711151518271049602656.png" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311612094482.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180702151627-471703760.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311607203917.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20171115152332-201653472.png" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="https://m.10010.com/mobilegoodsdetail/311802075660.html">
+										<img src="https://res.mall.10010.cn/mall/res/uploader/index/20180416093605-524989520.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id='moduleEditTips_278154' style='display:none'><span>格式限制为：JPG\PNG\GIF,大小限制为：300*130（像素）</span></div>
+				</div>
+			</div>
+			<div date-type='1' class="">
+				<div class='noclass' date-type='2' date-block-type='10_10_1_num' date-unit-type='10_10_Unit' date-layout-edit='true'
+				 date-module-edit='true'>
+					<div class="mmodule" date-module-def='10_hot_num' date-type='3' id="278156">
+						<div class="hot_package_box hot_list_box">
+							<p><b>靓号专区</b><span><a href="https://m.10010.com/mall-mobile/NumList/search">更多</a></span></p>
+							<div class="liang_box">
+								<div class="list_head">
+									<div class="area_change hover">
+										<span c="310" id="cityCustId">山西</span>
+									</div>
+									<div class="num_change">
+										<span c="" id="numGroupCustId">号码类型</span>
+									</div>
+									<div class="change numPatchChange" i="0">换一批</div>
+								</div>
+
+								<ul class="num_list" id="numDataBroad">
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="area_pop area_pop1" hidden>
+								<ul>
+									<li class="hover" c="310">山西</li>
+								</ul>
+								<a class="area_close"><img src="https://res.mall.10010.cn/mall/ves/images/mobileIndex/close.png?resVer=20181011213750"
+									 alt=""></a>
+							</div>
+							<script type="text/json" id="hotNumListArea">
+								[{
+									"gi": "311804209367",
+									"gn": "【靓号版】小冰神卡（商城版） SPC51000000122945152",
+									"groupi": "6900322380",
+									"groupn": "小冰神卡",
+									"high": "11",
+									"low": "8",
+									"tag": "特色靓号"
+								}]
+							</script>
+							<div class="area_pop num_pop" hidden>
+								<ul>
+									<li class="hover">
+										<span c="6900322380">特色靓号</span>
+									</li>
+								</ul>
+								<a class="num_close"><img src="https://res.mall.10010.cn/mall/ves/images/mobileIndex/close.png?resVer=20181011213750"
+									 alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mask"></div>
+		<div style="display: none;" class="mobileMask"></div>
+		<div style="display: none;" class="mobileLoading"></div>
+		<script id="numDataListTmpl" type="text/x-jquery-tmpl">
+			{{each(i,b) optionDataList}}
+    			<li class="numDetailOne" gi="${b.goodsId}"  a="${b.serialNumber}" b="${b.advanceLimit}" c="${b.featureName}"
+        		f="${b.cityCode}"  h="${b.niceRule}" i="${b.monthFeeLimit}"  j="${b.monthLimit}"  k="${b.groupKey}" >
+       			 <a href="${b.optionHref}">
+		            <span>${b.firstNum}</span>
+		            <span>${b.blackNumH}</span><span class="red">${b.redNum}</span><span>${b.blackNumT}</span><br/><span class="red border">${b.tag}</span>
+		        </a>
+		    </li>
+		    {{/each}}
+		    {{each(i,bean) emptyDataList}}
+		     <li></li>
+		    {{/each}}
+		</script>
+		<!--回到顶部-->
+		<div id="goTopBtn"><img src="../images/topnew.png" style="width: 36px;height: 36px;" /></div>
+		<!--<script src="../jquery/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../js/common/esf.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/ls.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/mui.min.js"></script>
+		<script src="../js/common/public.js"></script>
+		<script src="../js/common/business.js"></script>
+		<script src="../js/common/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/Mi.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(window).scroll(function() {
+				var sc = $(window).scrollTop();
+				var rwidth = $(window).width();
+				if(sc > 0) {
+					$("#goTopBtn").css("display", "block");
+					$("#goTopBtn").css("left", (rwidth - 50) + "px");
+				} else {
+					$("#goTopBtn").css("display", "none");
+				}
+			})
+			$("#goTopBtn").click(function() {
+				var sc = $(window).scrollTop();
+				$("body,html").animate({
+					scrollTop: 0
+				}, 500);
+			})
+		</script>
+		<script type="text/javascript">
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			mui.init();
+			mui.plusReady(function() {
+				//阻尼系数
+				//var deceleration = mui.os.ios ? 0.003 : 0.0005;
+				mui('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					//deceleration: deceleration
+				});
+
+				//plus.nativeUI.closeWaiting(); //这里监听页面是否加载完毕，完成后关闭等待
+				mui("#slider").slider({ //轮播图的轮播方法
+					interval: 3000
+				});
+				//轮播图
+				var param = {
+					typepid: 68,
+					recommend: 1,
+					count: 3
+				};
+				//				tools.postAsyncUrlData(business.interfacePath.ListArtsByRecommend, param, function(data) {
+				//JSON.stringify()将 JSON对象转为json字符串 
+				news.banner = {
+					guid: "1",
+					cover: "../images/home/201807161337491993903936.jpg",
+					author: "tom",
+					title: "大王卡"
+				};
+				news.banner1 = {
+					guid: "2",
+					cover: "../images/home/20181010142638590208432.jpg",
+					author: "tom",
+					title: "大王卡"
+				};
+				news.banner2 = {
+					guid: "3",
+					cover: "../images/home/20181016100300-627285728.jpg",
+					author: "tom",
+					title: "大王卡"
+				}
+				//				});
+			})
+			var news = new Vue({
+				el: '#news',
+				data: {
+					banner: {},
+					banner1: {},
+					banner2: {}
+				}
+			});
+		</script>
+	</body>
+
+</html>

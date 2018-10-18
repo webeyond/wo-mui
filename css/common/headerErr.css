@@ -1,0 +1,33 @@
+.mui-bar-nav {
+	top: 0;
+	-webkit-box-shadow: 0 0px 0px #ccc;
+	box-shadow: 0 0px 0px #ccc;
+}
+
+.mui-bar .mui-title {
+	left: 100px;
+	right: 100px;
+}
+
+.mui-pull-left img {
+	width: 28px;
+	margin-top: 8px;
+}
+
+.mui-pull-right img {
+	width: 24px;
+	margin-top: 10px;
+}
+#title{
+	font-family: '微软雅黑';
+	color: #FFFFFF;
+}
+#head{
+	background: #EB413D;
+}
+#head a{
+	color: #FFFFFF;
+}
+body {
+	touch-action: none;
+}

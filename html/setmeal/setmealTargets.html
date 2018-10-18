@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>目标页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/headerErr.css" />
+		<style type="text/css">
+			#close_page {
+				font-family: '微软雅黑';
+				color: #FFFFFF;
+			}
+			
+			.mui-bar-nav {
+				top: 0;
+				-webkit-box-shadow: 0 0px 0px #ccc;
+				box-shadow: 0 0px 0px #ccc;
+			}
+			
+			#head {
+				background: #EB413D;
+			}
+			
+			#head a {
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="head">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-icon-forward mui-pull-right" id="go_forward" style="display: none;"></a>
+			<h1 class="mui-title" id="close_page"></h1>
+		</header>
+		<script src="../../jquery/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				/**
+				 * 首先获取当前窗口对象
+				 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.currentWebview
+				 */
+				var self = plus.webview.currentWebview();
+				title = "您选择的是:" + self.title;
+
+				console.log(self.title);
+				$('#close_page').html(title);
+				/**
+				 * 创建一个窗口对象，用于加载外部的url；
+				 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.create
+				 */
+				var baiduWV = plus.webview.create("picker.html", "applyid", {
+					top: "44px",
+					bottom: "15px",
+					scalable: true
+				});
+				/**
+				 * 将加载外部url的窗口对象，作为子窗口添加到当前的窗口对象中；
+				 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.append
+				 */
+				self.append(baiduWV);
+				/**
+				 * 重写mui.back()方法
+				 * http://dev.dcloud.net.cn/mui/window/#closewindow
+				 */
+				// 首先将默认的back方法赋值给old_back变量
+				var old_back = mui.back;
+				// 然后进行重写
+				mui.back = function() {
+					/**
+					 * 监听子窗口对象是否可后退
+					 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.canBack
+					 */
+					baiduWV.canBack(function(event) {
+						var canBack = event.canBack;
+						if(canBack) {
+							/**
+							 * 后退到上次加载的页面
+							 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.back
+							 */
+							baiduWV.back();
+						} else {
+							//							alert("到头了，要关闭页面了！");
+							// 执行重写前的back方法
+							old_back();
+						}
+					});
+				};
+				// 右上角前进icon的事件
+				document.getElementById("go_forward").addEventListener("tap", function() {
+					/**
+					 * 监听子窗口对象是否可前进
+					 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.canForward
+					 */
+					baiduWV.canForward(function(event) {
+						var canForward = event.canForward;
+						if(canForward) {
+							/**
+							 * 前进到上次加载的页面
+							 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.forward
+							 */
+							baiduWV.forward();
+						} else {
+							//							alert("不能前进！");
+						}
+					});
+				});
+				// 头部文字的事件
+				document.getElementById("close_page").addEventListener("tap", old_back);
+			});
+		</script>
+	</body>
+
+</html>

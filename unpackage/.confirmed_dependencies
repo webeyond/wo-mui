@@ -1,0 +1,78 @@
+{
+	"index.html": {
+		"resources": [
+			"html/HomePages.html"
+		],
+		"refer": [
+			"html/HomePages.html",
+			"html/pretty/pretty.html",
+			"html/wifi/wificard.html",
+			"html/phone/phone.html",
+			"html/setmeal/setmeal.html",
+			"html/setting/mysetting.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"html/setting/mysetting.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"html/setmeal/setmeal.html": {
+		"refer": [
+			"html/setmeal/setmealTarget.html",
+			"html/setmeal/classSTarget.html",
+			"html/setmeal/setmealTargets.html",
+			"html/setmeal/tx.html"
+		]
+	},
+	"html/setmeal/setmealTarget.html": {
+		"resources": [
+			"html/setmeal/tx.html"
+		],
+		"refer": [
+			"html/setmeal/tx.html"
+		]
+	},
+	"html/setmeal/setmealTargets.html": {
+		"resources": [
+			"html/setmeal/tx.html",
+			"html/setmeal/apply.html",
+			"html/setmeal/picker.html"
+		],
+		"refer": [
+			"html/setmeal/tx.html",
+			"html/setmeal/bs.html",
+			"html/setmeal/apply.html",
+			"html/setmeal/address.html",
+			"html/setmeal/picker.html",
+			"html/setmeal/camera.html"
+		]
+	},
+	"html/setmeal/tx.html": {
+		"refer": [
+			"html/setmeal/setmealTargets.html",
+			"html/setmeal/apply.html"
+		]
+	},
+	"html/setmeal/camera.html": {
+		"refer": [
+			"html/setmeal/camera_image.html"
+		]
+	},
+	"html/setmeal/picker.html": {
+		"refer": [
+			"html/setmeal/camera_image.html",
+			"html/setmeal/beecloud.html"
+		]
+	},
+	"html/setmeal/beecloud.html": {
+		"refer": [
+			"html/setmeal/setmeal.html"
+		]
+	}
+}
