@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
+	</head>
+
+	<body>
+		<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 1000px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			#close_page {
+				font-family: '微软雅黑';
+				color: #FFFFFF;
+			}
+			
+			.mui-bar-nav {
+				top: 0;
+				-webkit-box-shadow: 0 0px 0px #ccc;
+				box-shadow: 0 0px 0px #ccc;
+			}
+			
+			#head {
+				background: #EB413D;
+			}
+			
+			#head a {
+				color: #FFFFFF;
+			}
+			
+			.mui-btn-blue,
+			.mui-btn-primary,
+			input[type=submit] {
+				color: #fff;
+				border: 1px solid #EB413D;
+				background-color: #EB413D
+			}
+			
+			.button {
+				width: 90%;
+				margin: 0 auto;
+				/*margin-top: 15px;*/
+				background: #EB413D;
+				color: #FFFFFF;
+				border: 0px;
+				display: block;
+			}
+		</style>
+		<header class="mui-bar mui-bar-nav" id="head">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;"></h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						未完成
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						已完成
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						全部订单
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095451924
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095433433
+												<p class='mui-ellipsis'>未支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095445678
+												<p class='mui-ellipsis'>未支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095345234
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095451454
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181018454545456
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181017454594343
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181014454595668
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181019095345234
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181019095451454
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181020095451924
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095433433
+												<p class='mui-ellipsis'>未支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095445678
+												<p class='mui-ellipsis'>未支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095345234
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181019095451454
+												<p class='mui-ellipsis'>已支付，未发货</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="order_detail.html">
+											<div class="mui-media-body">
+												订单号：20181018454545456
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181017454594343
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181014454595668
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181019095345234
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<div class="mui-media-body">
+												订单号：20181019095451454
+												<p class='mui-ellipsis'>已支付，已完成</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+			})(mui);
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/setting.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/feedback.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/about.css" />
+		<style type="text/css">
+			.mui-bar-nav {
+				top: 0;
+				-webkit-box-shadow: 0 0px 0px #ccc;
+				box-shadow: 0 0px 0px #ccc;
+			}
+			
+			.mui-switch.mui-active {
+				border-color: #E14D4D;
+				background-color: #E14D4D;
+			}
+		</style>
+	</head>
+
+	<body class="mui-fullscreen">
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<!--页面主结构结束-->
+		<!--单页面开始-->
+		<div id="setting" class="mui-page">
+			<!--页面标题栏开始-->
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left" style="color: #FFFFFF">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title" style="font-family: '微软雅黑';color: #FFFFFF;">系统设置</h1>
+			</div>
+			<!--页面标题栏结束-->
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell" style="margin-top: 20px;">
+								<a href="#repair" class="mui-navigate-right" style="line-height: 32px;">
+									<img class="mui-media-object mui-pull-left" style="width: 22px;height: 22px;margin-right: 10px;margin-top: 5px;" src="../../images/settings/icon_xgmm.png">
+									<span>修改密码</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="#notifications" class="mui-navigate-right" style="line-height: 32px;">
+									<img class="mui-media-object mui-pull-left" style="width: 22px;height: 22px;margin-right: 10px;margin-top: 5px;" src="../../images/settings/icon_yjfk.png">
+									<span>新消息通知</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell" style="display: none;">
+								<a href="#about" class="mui-navigate-right" style="line-height: 32px;">
+									<img class="mui-media-object mui-pull-left" style="width: 22px;height: 22px;margin-right: 10px;margin-top: 5px;" src="../../images/settings/icon_note.png">
+									<span>帮助与反馈</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a onclick="clcache()" class="mui-navigate-right" style="line-height: 32px;">
+									<img class="mui-media-object mui-pull-left" style="width: 22px;height: 22px;margin-right: 10px;margin-top: 5px;" src="../../images/settings/icon_qchc.png">
+									<span>清除缓存</span>
+									<span style="float: right;" id="hcNum"></span>
+								</a>
+							</li>
+
+						</ul>
+						<div class="mui-content-padded" style="margin: 20px;line-height: 20px;padding:5px;">
+							<button onclick="closeApp();" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 11px;">注销登录</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--页面主内容区结束-->
+		</div>
+		<!--单页面结束-->
+		<div id="repair" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button style="color: #FFFFFF" type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title" style="color: #FFFFFF;">修改密码</h1>
+			</div>
+			<div class="mui-page-content">
+				<form class="mui-input-group" style="margin-top: 25px;">
+					<div class="mui-input-row">
+						<label style="width: 35%;">原密码</label>
+						<input style="width: 65%;" id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入原密码">
+					</div>
+
+					<div class="mui-input-row">
+						<label style="width: 35%;">新密码</label>
+						<input style="width: 65%;" id='newPassword' type="password" class="mui-input-clear mui-input" placeholder="新密码必须一致">
+					</div>
+					<div class="mui-input-row">
+						<label style="width: 35%;">再次输入密码</label>
+						<input style="width: 65%;" id='newPasswords' type="password" class="mui-input-clear mui-input" placeholder="新密码必须一致">
+					</div>
+				</form>
+				<div class="mui-content-padded" style="margin-top: 25px;">
+					<button onclick="upadtePass()" id='sendPassword' style="background-color: #EB413D;border: 0;padding-top:10px;padding-bottom: 10px;" class="mui-btn mui-btn-block mui-btn-primary">更新</button>
+				</div>
+			</div>
+		</div>
+		<div id="notifications" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button style="color: #FFFFFF" type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title" style="color: #FFFFFF">新消息通知</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
+							</li>
+						</ul>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								通知显示消息详情
+								<div class="mui-switch mui-active mui-switch-mini">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</li>
+						</ul>
+						<div class="mui-content-padded">
+							<p>若关闭，当收到新消息时，通知提示将不显示发信人和内容摘要</p>
+						</div>
+
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a href="#notifications_disturb" class="mui-navigate-right">功能消息免打扰</a>
+							</li>
+						</ul>
+						<div class="mui-content-padded">
+							<p>设置系统功能消息提示声音和震动的时段</p>
+						</div>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
+							</li>
+						</ul>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								声音
+								<div class="mui-switch mui-active mui-switch-mini">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</li>
+							<li class="mui-table-view-cell">
+								震动
+								<div class="mui-switch mui-active mui-switch-mini">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</li>
+						</ul>
+						<div class="mui-content-padded">
+							<p>当在运行时，你可以设置是否需要声音或者震动</p>
+						</div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="notifications_disturb" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button style="color: #FFFFFF;" type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title" style="color: #FFFFFF;">功能消息免打扰</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view mui-table-view-radio">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">开启</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">只在夜间开启</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">关闭</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="about" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button style="color: #FFFFFF" type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title" style="color: #FFFFFF">帮助与反馈</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a id="tel" class="mui-navigate-right">客服电话</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="feedback-btn" href="#feedback" class="mui-navigate-right">问题反馈</a>
+							</li>
+							<li id="check_update" class="mui-table-view-cell">
+								<a id="update" class="mui-navigate-right">检查更新</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		//帮助与反馈
+		<div id="feedback" class="mui-page feedback">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" style="background-color: #EB413D;">
+				<button style="color: #FFFFFF" type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #FFFFFF;">发送</button>
+				<h1 class="mui-center mui-title" style="color: #FFFFFF">问题反馈</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-content-padded">
+					<div class="mui-inline">问题和意见</div>
+					<a class="mui-pull-right mui-inline" href="#popover">
+						快捷输入
+						<span class="mui-icon mui-icon-arrowdown"></span>
+					</a>
+					<!--快捷输入具体内容，开发者可自己替换常用语-->
+					<div id="popover" class="mui-popover">
+						<div class="mui-popover-arrow"></div>
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<!--仅流应用环境下显示-->
+									<li class="mui-table-view-cell stream">
+										<a href="#">桌面快捷方式创建失败</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">界面显示错乱</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">启动缓慢，卡出翔了</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">偶发性崩溃</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">UI无法直视，丑哭了</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mui-input-row">
+					<textarea id='question' class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
+				</div>
+				<p>图片(选填,提供问题截图,总大小10M以下)</p>
+				<div id='image-list' class="row image-list"></div>
+				<p>QQ/邮箱</p>
+				<div class="mui-input-row">
+					<input id='contact' type="text" class="mui-input-clear contact" placeholder="(选填,方便我们联系你 )" />
+				</div>
+				<div class="mui-content-padded">
+					<div class="mui-inline">应用评分</div>
+					<div class="icons mui-inline" style="margin-left: 6px;">
+						<i data-index="1" class="mui-icon mui-icon-star"></i>
+						<i data-index="2" class="mui-icon mui-icon-star"></i>
+						<i data-index="3" class="mui-icon mui-icon-star"></i>
+						<i data-index="4" class="mui-icon mui-icon-star"></i>
+						<i data-index="5" class="mui-icon mui-icon-star"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../jquery/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/common/mui.min.js"></script>
+	<script src="../../js/mui.view.js"></script>
+	<script src="../../js/common/public.js"></script>
+	<script src="../../js/common/business.js"></script>
+	<script src='../../js/feedback.js'></script>
+	<script src="../../js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var userinfo = JSON.parse(localStorage.getItem(config.localStorage.login.userInfo));
+
+		function upadtePass() {
+			if($("#password").val() == "") {
+				mui.toast('密码不能为空,请输入原密码');
+				return false;
+			}
+			if($('#newPassword').val() == "" || $('#newPasswords').val() == "") {
+				mui.toast('新密码不能为空');
+				return false;
+			}
+			if($('#newPassword').val() != $('#newPasswords').val()) {
+				mui.toast('两次密码必须输入一致');
+				return false;
+			}
+
+			console.log(JSON.stringify(userinfo));
+			var name = userinfo.account;
+			var oldpassword = $("#password").val();
+			var newpassword = $("#newPasswords").val();
+
+			console.log(name);
+			console.log(oldpassword);
+			console.log(newpassword);
+
+			var btnArray = ['否', '是'];
+
+			mui.confirm('您确定修改密码吗？', '修改密码', btnArray, function(e) {
+				if(e.index == 1) {
+					var param = {
+							username: name,
+							oldpwd: oldpassword,
+							newpwd: newpassword
+					};
+					tools.postAsyncUrlData(business.interfacePath.chgPassword,param,function(data){
+						if(data.code == 0) {
+							console.log(data.msg);
+							alert(data.msg);
+							plus.runtime.restart();
+						} else {
+							console.log(data.msg);
+							mui.toast(data.msg + ',请重新修改。');
+						}
+					});
+				} else {
+					return false;
+				}
+			});
+
+		}
+	</script>
+	<script type="text/javascript">
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
+		});
+		//初始化单页的区域滚动
+		mui('.mui-scroll-wrapper').scroll();
+
+		mui.plusReady(function() {
+			plus.cache.calculate(function(size) {
+				var sizeCache = size;
+				sizeCache = parseFloat((sizeCache / (1024 * 1024)) + 0.01).toFixed(2) + "M";
+				//console.log(sizeCache);
+				//$('#hcNum').html(sizeCache);
+			});
+			plus.cache.setMaxSize(10 * 1024 * 1024);
+		})
+
+		function closeApp() {
+			plus.nativeUI.actionSheet({
+				cancel: "取消",
+				buttons: [{
+					title: "注销当前账号"
+				}, {
+					title: "重新启动应用"
+				}, {
+					title: "直接关闭应用"
+				}]
+			}, function(e) {
+				var index = e.index;
+				switch(index) {
+					case 1: //
+						//localStorage.clear();
+						//plus.runtime.restart();
+						var ws = plus.webview.create("../../index.html", "index.html", {
+							scalable: false,
+							cachemode: false,
+							popGesture: 'hide'
+						});
+						ws.show('slide-in-right');
+						break;
+					case 2: //
+						localStorage.clear();
+						plus.runtime.restart();
+					case 3: //
+						plus.runtime.quit();
+						break;
+				}
+			});
+		};
+
+		function clcache() { 
+			plus.cache.calculate(function(size) {
+				console.log(size);
+				var sizeCache = size;
+				mui.confirm("您是否愿意清除您的缓存", "清除缓存", ["确认", "取消"], function(e) {
+					if(e.index == 1) {} else {
+						plus.cache.clear(function() {
+							plus.storage.clear();
+							alert("缓存清除完毕");
+						});
+					}
+				});
+			});
+		}
+
+		function getLengthFun() {
+			return plus.storage.getLength();
+		}
+
+		function clearAllItem() {
+			plus.storage.clear();
+			var num = getLengthFun();
+			if(num == 0) {
+				mui.toast("清除缓存成功！");
+			} else {
+				mui.toast("清除数据失败！");
+			}
+		}
+
+		//客服电话
+		document.getElementById("tel").addEventListener('tap', function() {
+			if(mui.os.plus) {
+				plus.device.dial("114");
+			} else {
+				location.href = 'tel:114';
+			}
+
+		});
+		//检查更新
+		document.getElementById("update").addEventListener('tap', function() {
+			tools.getAsyncUrlData(business.interfacePath.getVersionFile, {
+				"appid": plus.runtime.appid,
+				"version": plus.runtime.version,
+				"imei": plus.device.imei
+			}, function(data) {
+				if(data.status) {
+					plus.ui.confirm(data.note, function(i) {
+						if(0 == i) {
+							plus.runtime.openURL(data.url);
+						}
+					}, data.title, ["立即更新", "取　　消"]);
+				} else {
+					mui.toast('山西智慧党建 已是最新版本~')
+				}
+			});
+		});
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if(viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+	</script>
+
+</html>

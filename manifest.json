@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H5DF929BE",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "muiWo",/*应用名称，程序桌面图标名称*/
+	"name": "沃超越",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -29,15 +29,10 @@
         "Events": {
             "description": "应用扩展事件"
         },
-        "Messaging": {
-            "description": "访问通讯能力"
-        },
+        
         "Maps": {
             "description": "管理地图插件"
-        },
-        "Speech": {
-            "description": "管理语音识别插件"
-        }
+        },"Payment":{}
 	},
 	"plus": {
 		"statusbar": {
@@ -49,7 +44,7 @@
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {
+		"distribute": {"plugins":{"payment":{"weixin":{"description":"微信支付","appid":"44f01a13-965f-4b27-ba9f-da678b47f3f5"},"alipay":{"description":"阿里支付","scheme":""},"appleiap":{"description":"Apple应用内支付"}}},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -63,68 +58,68 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
+				"permissions": ["<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.USE_FINGERPRINT\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
 			},
 			"orientation": ["portrait-primary", "portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
-					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					 /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
 					"iphone": {
 						"normal": "",/*iPhone普通屏幕程序图标，分辨率：57x57*/
 						"retina": "",/*iPhone高分屏程序图标，分辨率：114x114*/
-						"retina7": "",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
 						"spotlight-normal": "", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
 						"spotlight-retina": "", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
-						"spotlight-retina7": "",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						"settings-normal": "", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
+						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png"
 					},
 					"ipad": {
 						"normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
 						"retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
-						"normal7": "", /*iPad iOS7程序图标，分辨率：76x76*/
-						"retina7": "", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						 /*iPad iOS7程序图标，分辨率：76x76*/
+						 /*iPad iOS7高分屏程序图标，分辨率：152x152*/
 						"spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
 						"spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
-						"spotlight-normal7": "",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
-						"spotlight-retina7": "",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "",/*iPad设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
-					}
+						/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						/*iPad设置页面程序图标，分辨率：29x29*/
+						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification":"unpackage/res/icons/20x20.png","notification@2x":"unpackage/res/icons/40x40.png"
+					},"appstore":"unpackage/res/icons/1024x1024.png"
 				},
 				"android": {
-					"mdpi": "", /*普通屏程序图标，分辨率：48x48*/
-					"ldpi": "", /*大屏程序图标，分辨率：48x48*/
-					"hdpi": "", /*高分屏程序图标，分辨率：72x72*/
-					"xhdpi": "",/*720P高分屏程序图标，分辨率：96x96*/
-					"xxhdpi": ""
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"
 				}
 			},
 			"splashscreen": {
 				"ios": {
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": ""
+						"retina35": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png","iphonex":"C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png","retina47":"C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png","iphonexl":"C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png","retina55l":"C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png"
 					},
 					"ipad": {
-						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": ""
+						"portrait": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "C:/Users/lego/Downloads/Desktop/引擎计划/微信图片_20181019114312.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"hdpi": "images/index.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "images/index.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "images/index.png"
 				}
 			}
 		}
@@ -154,7 +149,9 @@
 			"html/setting/mysetting.html": {
 				"resources": [],
 				"refer": [
-					"index.html"
+					"index.html",
+					"html/setting/systemInfo.html",
+					"html/setting/order.html"
 				],
 				"priority": 0
 			},
@@ -192,7 +189,8 @@
 				"resources": [],
 				"refer": [
 					"html/setmeal/setmealTargets.html",
-					"html/setmeal/apply.html"
+					"html/setmeal/apply.html",
+					"html/setmeal/picker.html"
 				],
 				"priority": 0
 			},
@@ -207,15 +205,43 @@
 				"resources": [],
 				"refer": [
 					"html/setmeal/camera_image.html",
-					"html/setmeal/beecloud.html"
+					"html/setmeal/beecloud.html",
+					"html/setmeal/tx.html"
 				],
 				"priority": 0
 			},
 			"html/setmeal/beecloud.html": {
-				"resources": [],
-				"refer": [
+				"resources": [
 					"html/setmeal/setmeal.html"
 				],
+				"refer": [
+					"index.html",
+					"html/setmeal/order.html",
+					"html/HomePages.html",
+					"html/setmeal/picker.html"
+				],
+				"priority": 0
+			},
+			"html/setting/systemInfo.html": {
+				"resources": [],
+				"refer": [
+					"html/setting/mysetting.html"
+				],
+				"priority": 0
+			},
+			"html/setting/order.html": {
+				"resources": [],
+				"refer": [
+					"html/setting/mysetting.html",
+					"html/setting/order_detail.html"
+				],
+				"priority": 0
+			},
+			"html/setting/order_detail.html": {
+				"resources": [
+					"html/setting/order.html"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

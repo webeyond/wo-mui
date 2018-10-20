@@ -278,7 +278,10 @@
 	</head>
 
 	<body>
-
+		<!--<header class="mui-bar mui-bar-nav" id="head">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;"></h1>
+		</header>-->
 		<div class="mui-content">
 			<div class="mui-content-padded">
 				<ul class="mui-table-view" id="public_ul">
@@ -412,17 +415,17 @@
 				document.getElementById("btn").addEventListener("tap", function() {
 					mui.openWindow({
 						url: "beecloud.html",
-						id: "beecloud",
+						id: "beecloud.html",
 						styles: {
 							top: '20px',
 							scalable: true
 						}
 					});
+//					self.close();
 				});
 			});
 		</script>
 
 	</body>
 	<script type="text/javascript" src="../../js/immersed.js"></script>
-
 </html>

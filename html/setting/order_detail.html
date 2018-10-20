@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<style type="text/css">
+			#item_list {
+				margin-top: 3px;
+			}
+			
+			#item_list p {
+				color: #333;
+			}
+			
+			#item_list span {
+				float: right;
+				color: #EB413D;
+				display: none;
+				;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #EB413D;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;"></h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" id="public_ul">
+				<li class="mui-table-view-cell">
+					<label for="">订单号</label>
+					<input type="text" readonly="readonly" value="20181019095451924"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">收件人</label>
+					<input readonly="readonly" readonly="readonly" type="text" value="赵鹏"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">手机号码</label>
+					<input readonly="readonly" readonly="readonly" type="text" value="18601700520"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">收件地址</label>
+					<input readonly="readonly" readonly="readonly" type="text" value="上海市普陀区新泉路66号"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">购买数量</label>
+					<input readonly="readonly" readonly="readonly" type="text" value="1"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">总金额</label>
+					<input readonly="readonly" readonly="readonly" type="text" value="50"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<label for="">购买商品</label>
+					<div id="item_list">大王卡</div>
+				</li>
+			</ul>
+			<button class="button" style="display: none;">立即支付</button>
+		</div>
+		<script src="../js/dui.js"></script>
+		<script src="../js/pay.js"></script>
+		<script>
+			mui.init();
+			var input = document.getElementsByTagName('input');
+			var oid = localStorage.getItem('dongyiweidian_oid');
+			var request_url = localStorage.getItem('dongyiweidian_request_url');
+			var item_list = document.getElementById('item_list');
+			var btn = document.getElementsByClassName('button');
+			var money = 0;
+			var oid_data = '';
+			mui.get(request_url + 'Order/get_one', {
+				oid_data: oid
+			}, function(data) {
+
+				var address_arr = data.address_arr;
+				var item_arr = data.item_arr;
+
+				if(data.is_pay == 0) {
+					btn['1'].style.display = "block";
+				}
+
+				money = data.money;
+				oid_data = data.id;
+				input['0'].value = data.oid;
+				input['1'].value = address_arr.name;
+				input['2'].value = address_arr.phone;
+				input['3'].value = address_arr.address;
+				input['4'].value = address_arr.zcode;
+				input['5'].value = data.all_num;
+				input['6'].value = data.money;
+
+				var num_arr = data.num.split('-');
+
+				//			alert(num_arr['1']);
+				var num = 0;
+				for(var a in item_arr) {
+					var tmpl = '<p>名称：' + item_arr[a].name + '&nbsp;&nbsp;&nbsp;数量：' + num_arr[num] + '<span class="comment_span" item_id="' + item_arr[a].id + '" item_name="' + item_arr[a].name + '">评论</span></p>';
+					item_list.innerHTML += tmpl;
+					num++;
+				}
+
+				show_comment();
+
+			}, 'json');
+
+			function show_comment() {
+				var comment_span = document.getElementsByClassName('comment_span');
+				for(var a = 0; a < comment_span.length; a++) {
+					comment_span[a].style.display = "block";
+
+					(function(index) {
+						comment_span[a].addEventListener('tap', function() {
+							var cid = comment_span[index].getAttribute('item_id');
+							var cname = comment_span[index].getAttribute('item_name');
+							localStorage.setItem('cid', cid);
+							localStorage.setItem('cname', cname);
+							dui.jump('add_comment.html', 'add_comment');
+						})
+					})(a);
+
+				}
+
+			}
+
+			btn['0'].addEventListener('tap', function() {
+				start_pay({
+					id: 'alipay', //支付方式
+					succFn: function() { //成功的回调
+						//							alert('支付成功');
+
+						mui.get(request_url + 'Car/mod_pay_state', {
+							id_data: oid_data
+						}, function(datas) {
+							if(datas == 1) {
+
+								mui.toast('支付成功');
+
+								btn['1'].style.display = "none";
+
+								show_comment();
+
+								mui.plusReady(function() {
+
+									var user_order = plus.webview.getWebviewById('user_order');
+									mui.fire(user_order, 'get_order', {});
+
+								})
+
+							} else {
+								mui.toast('下单失败,请联系客服');
+							}
+						})
+
+					},
+					errFn: function(data) { //失败的回调
+						console.log(data);
+					},
+					oid: '138001380', //订单号
+					money: '0.1' //金额
+				});
+			});
+		</script>
+	</body>
+
+</html>

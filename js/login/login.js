@@ -31,7 +31,6 @@ function fullscreen() {
 		}
 
 		document.getElementById('login').addEventListener('tap', function(event) {
-			console.log("11111");
 			var userName = document.getElementById("account").value;
 			var myPassword = document.getElementById("password").value;
 

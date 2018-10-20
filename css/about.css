@@ -1,0 +1,179 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-family: '微软雅黑';
+}
+
+.mui-navbar {
+	top: 0;
+	-webkit-box-shadow: 0 0px 0px #ccc;
+	box-shadow: 0 0px 0px #ccc;
+}
+
+#gy {
+	background-color: #d21c1c;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../images/setting/bg.jpg);
+	background-position: bottom;
+	background-size: cover;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+@media (min-width: 370px) {
+	body {
+		font-size: 16px;
+		/* iphone6 宽度标准字号 */
+	}
+}
+
+@media (min-width: 401px) {
+	body {
+		font-size: 18px;
+		/* iphone6 plus 宽度标准字号 */
+	}
+}
+
+.yjwk {
+	background-color: #FFF;
+	border-radius: 0.5em;
+	width: 88%;
+	height: 84%;
+	position: absolute;
+	left: 6%;
+	top: 6%;
+	overflow: auto;
+	-moz-opacity: 0.9;
+	opacity: .9;
+	filter: alpha(opacity=90);
+}
+
+.logo {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 2.5em;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.yjwk h1 {
+	text-align: center;
+	font-size: 1.2em;
+	color: #000;
+	margin: 0px;
+}
+
+.yjwk p {
+	width: 84%;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 0.84em;
+	line-height: 156%;
+}
+
+@-webkit-keyframes a_phone_yd {
+	0% {
+		-webkit-transform: translate(0px, 300px);
+		-moz-transform: translate(0px, 300px);
+		-ms-transform: translate(0px, 300px);
+		-o-transform: translate(0px, 300px);
+		transform: translate(0px, 300px)
+	}
+	100% {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0)
+	}
+}
+
+@-moz-keyframes a_phone_yd {
+	0% {
+		-webkit-transform: translate(0px, 300px);
+		-moz-transform: translate(0px, 300px);
+		-ms-transform: translate(0px, 300px);
+		-o-transform: translate(0px, 300px);
+		transform: translate(0px, 300px)
+	}
+	100% {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0)
+	}
+}
+
+@-ms-keyframes a_phone_yd {
+	0% {
+		-webkit-transform: translate(0px, 300px);
+		-moz-transform: translate(0px, 300px);
+		-ms-transform: translate(0px, 300px);
+		-o-transform: translate(0px, 300px);
+		transform: translate(0px, 300px)
+	}
+	100% {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0)
+	}
+}
+
+@-o-keyframes a_phone_yd {
+	0% {
+		-webkit-transform: translate(0px, 300px);
+		-moz-transform: translate(0px, 300px);
+		-ms-transform: translate(0px, 300px);
+		-o-transform: translate(0px, 300px);
+		transform: translate(0px, 300px)
+	}
+	100% {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0)
+	}
+}
+
+@keyframes a_phone_yd {
+	0% {
+		-webkit-transform: translate(0, 300px);
+		-moz-transform: translate(0, 300px);
+		-ms-transform: translate(0, 300px);
+		-o-transform: translate(0, 300px);
+		transform: translate(0, 300px)
+	}
+	100% {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0)
+	}
+}
+
+.a_phone_yd {
+	-webkit-animation: a_phone_yd 1.5s cubic-bezier(.21, 0, .07, 1) 1;
+	animation: a_phone_yd 1.5s cubic-bezier(.21, 0, .07, 1) 1
+}
+
+.ewm {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 25px;
+	margin-top: 15px;
+}
+
+.ewm img {
+	width: 100%;
+}

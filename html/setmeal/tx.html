@@ -7,9 +7,11 @@
 		<meta name=format-detection content="telephone=no" />
 		<title>免流量服务</title>
 		<link href="https://res.mall.10010.cn/mall/wow/tencent/onlineGo.css?9106132cef88b0074432" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.css"/>
 	</head>
 
 	<body class=grey>
+
 		<section class=top-img>
 			<img src="https://res.mall.10010.cn/mall/wow/static/images/tencent/onlineGo/images/godking_tab_top_01.jpg?5fff8209c380365d6cb4cf7b4ffadf15" alt=king>
 			<img src="https://res.mall.10010.cn/mall/wow/static/images/tencent/onlineGo/images/godking_tab_top_02.jpg?3e627b35bff2c72946034fab84d2dbc9" alt=king>
@@ -24,7 +26,7 @@
 				</div>
 			</div>
 			<div class=btn-box id="apply">
-				<a class="btn">免费申请</a>
+				<a href="picker.html" class="btn">免费申请</a>
 			</div>
 			<p class=detail>
 				<!--<a href=#go-fee>资费详情</a>-->
@@ -37,19 +39,22 @@
 		<script type="text/javascript">
 			mui.init();
 			mui.plusReady(function() {
-				document.getElementById("apply").addEventListener("tap", function() {
-					mui.openWindow({
-						url: "setmealTargets.html",
-						id: "targets",
-						extras: {
-							title: "大王卡"
-						},
-						styles: {
-							top: '20px',
-							scalable: true
-						}
-					});
-				});
+				//				document.getElementById("apply").addEventListener("tap", function() {
+				//					mui.openWindow({
+				//						url: "picker.html",
+				//						id: "picker.html",
+				//						extras: {
+				//							title: "大王卡"
+				//						},
+				//						styles: {
+				//							top: '20px',
+				//							scalable: true
+				//						},
+				//						waiting: {
+				//							autoShow: true
+				//						}
+				//					});
+				//				});
 			});
 		</script>
 	</body>

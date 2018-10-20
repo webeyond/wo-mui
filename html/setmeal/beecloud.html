@@ -183,22 +183,62 @@
 			}, function(e) {
 				document.getElementById("status").innerHTML = '支付成功';
 				document.getElementById("status").style.color = 'red'
-				document.getElementById("status_msg").innerHTML = "-------- 支付成功 --------" + "\n您的产品很快会寄出...";
+				document.getElementById("status_msg").innerHTML = "-------- 支付成功 --------" + "\n-------- 订单完成 --------" + "\n-------- 预开户完成 --------" + "\n您的产品很快会寄出...";
 			});
 		}
 	</script>
 	<script type="text/javascript">
-		mui.init();
+		mui.init()
 		mui.plusReady(function() {
+			var selfBack = mui.back;
+			mui.back = function() {
+
+				var webview =
+					plus.webview.getWebviewById('beecloud.html');
+
+				if(webview) {
+					webview.hide('none');
+					webview.show('slide-in-rihgt', 150);
+				}
+
+				plus.webview.currentWebview().hide();
+
+				plus.webview.currentWebview().close();
+			};
 			document.getElementById("btn").addEventListener("tap", function() {
-				mui.openWindow({
-					url: "setmeal.html",
-					id: "setmeal",
-					styles: {
-						top: '20px',
-						scalable: true
+				var btnArray = ['是', '否'];
+				mui.confirm('您确定关闭支付页面吗?', '', btnArray, function(e) {
+					//当选择是的时候执行
+					if(e.index == 0) {
+
+						//判断当前设备类型
+						if(mui.os.ios || mui.os.ipad || mui.os.android) {
+							// 获取当前webview窗口对象
+							var curr = plus.webview.currentWebview();
+
+							//获取所有已经打开的webview窗口
+							var wvs = plus.webview.all();
+
+							for(var i = 0, len = wvs.length; i < len; i++) {
+								//关闭除当前页面外的其他页面
+								if(wvs[i].getURL() == curr.getURL())
+
+									//遇到当前页跳过
+									continue;
+
+								//非当前页执行关闭
+								plus.webview.close(wvs[i]);
+							}
+							//打开login页面
+							plus.webview.open('../../index.html');
+
+							//执行关闭当前页面
+							curr.close();
+						} else
+							//runtime 运行环境管理模块执行退出 (一般运行不到这里)
+							plus.runtime.quit();
 					}
-				});
+				})
 			});
 		});
 	</script>
